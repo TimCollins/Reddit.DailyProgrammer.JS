@@ -5,9 +5,9 @@ var http = require('http'),
 	open = require('open'),
 	index, serve, port, root;
 	
-port = 8080;
+port = 8036;
 
-root = '../GettingStarted';
+root = '../src';
 
 index = serveIndex(root, {view: 'details', icons: true});
 
