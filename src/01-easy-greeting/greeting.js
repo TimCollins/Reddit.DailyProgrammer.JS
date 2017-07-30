@@ -1,4 +1,5 @@
 var readline = require('readline').createInterface(process.stdin, process.stdout);
+var fs = require('fs');
 var name, age, username;
 
 readline.question('Name: ', nameCallback);
@@ -16,6 +17,15 @@ function ageCallback(answer) {
 function usernameCallback(answer) {
     username = answer;
 
-    console.log(`Your name is ${name}, you are ${age} years old, and your username is ${username}.`);
-    process.exit(0);
+    var msg = `Your name is ${name}, you are ${age} years old, and your username is ${username}.`;
+    console.log(msg);
+
+    fs.writeFile('test.txt', msg, function(err) {
+        if (err) {
+            throw err;
+        }
+
+        console.log('File has been saved');
+        process.exit(0);
+    });
 }
