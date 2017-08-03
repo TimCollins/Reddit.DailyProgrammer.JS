@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-easy-greeting", "01-easy-greeting", "{75F03619-AF27-46F7-87F9-978376CF2FD9}"
+	ProjectSection(SolutionItems) = preProject
+		01-easy-greeting\greeting.js = 01-easy-greeting\greeting.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-int-menu", "01-int-menu", "{C4D9CD42-DF35-4BD0-B7B1-F6C3A9C78F16}"
+	ProjectSection(SolutionItems) = preProject
+		01-int-menu\menu.js = 01-int-menu\menu.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-hard-guess", "01-hard-guess", "{02F366BD-7738-491E-9989-3D8946CFB1BE}"
+	ProjectSection(SolutionItems) = preProject
+		01-hard-guess\guess.js = 01-hard-guess\guess.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
