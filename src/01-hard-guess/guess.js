@@ -4,39 +4,32 @@ var readline = require('readline').createInterface(process.stdin, process.stdout
 
 var max = 100;
 var min = 1;
-var i = 0;
-var number = Math.floor(Math.random() * (max - min + 1)) + min;
-var done = false;
+var guess = 50;
+var turns = 0;
 
 // See https://stackoverflow.com/questions/24464404/how-to-readline-infinitely-in-node-js
 var recursiveAsyncReadLine = function () {
+    console.log('Is your number (h)igher than, (l)ower than or (e)qual to', guess, '?');
+
     readline.question(':> ', function (answer) {
-        if (answer === 'exit') {
+        if (answer === 'h') {
+            guess = parseInt((guess + max) / 2);
+            turns++;
+        } else if (answer === 'l') {
+            guess = parseInt((min + guess) / 2);
+            turns++;
+        } else if (answer === 'e') {
+            console.log('Guessed the correct number in', turns, 'turns.');
+            return readline.close();
+        } else if (answer === 'exit') {
             console.log('Bye!');
             return readline.close();
+        } else {
+            console.log('Try again');
         }
-        console.log('Answer was', answer);
+
         recursiveAsyncReadLine();
     });
 };
 
 recursiveAsyncReadLine();
-
-//readline.setPrompt(':> ');
-//readline.prompt();
-
-//readline.on('line', function (line) {
-//    var l = line.trim();
-//    switch (l) {
-//        case 'hello':
-//            console.log('World!');
-//            break;
-//        default:
-//            console.log('Entered', l);
-//            break;
-//    }
-//    readline.prompt();
-//}).on('close', function () {
-//    console.log('Bye!');
-//    process.exit(0);
-//});
